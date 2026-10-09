@@ -1,0 +1,115 @@
+/* Archival film: pure black, red ink, visible grain, quiet copy. */
+:root{--film-red:#8f0d17;--film-light:#bc2a36;--film-black:#000000;--display:"Bodoni Moda",Didot,"Times New Roman",serif;--grain:url("assets/film-grain.svg")}
+body::before{content:none}
+body::after{content:none}
+@keyframes film-grain{0%,100%{transform:translate(0,0)}20%{transform:translate(-1.2%,.8%)}40%{transform:translate(1%,-.9%)}60%{transform:translate(-.6%,-1.2%)}80%{transform:translate(.9%,.6%)}}
+.portrait{position:relative;isolation:isolate;transform:rotate(-.5deg);box-shadow:0 12px 40px #25151916}
+.portrait::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:var(--grain),radial-gradient(ellipse at center,transparent 50%,#10060655 100%);opacity:.2;mix-blend-mode:multiply}
+.cover-name{color:#b71b29;text-shadow:none;filter:none}
+.cover-bottom{margin-top:2.2rem}
+.about-panel,.film-section,.contact-section{position:relative;overflow:hidden;isolation:isolate;background:var(--film-black)}
+.about-panel{padding:6.5rem 0}
+.about-grid{grid-template-columns:1.12fr 1fr;gap:clamp(3rem,7vw,7rem);align-items:start}
+.about-copy>.eyebrow{color:#c2c2c2;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:2rem}
+.about-copy h2{font-family:var(--display);font-size:clamp(4.4rem,7.5vw,7rem);font-weight:400;line-height:.99;letter-spacing:-.045em;margin-bottom:2.5rem}
+.about-copy h2 span{font:inherit;letter-spacing:inherit;font-style:italic;color:var(--film-light);display:block;margin-top:0;text-shadow:0 0 24px #dd333328}
+.about-copy>p.about-name{font-size:1.05rem;font-weight:500;color:#f8f8f8;margin-bottom:1rem}
+.about-copy>p:not(.eyebrow){font-size:1rem;line-height:1.7;max-width:26rem;margin-bottom:.5rem}
+.about-links{display:flex;gap:2rem;flex-wrap:wrap;margin-top:2rem}
+.about-links .light-link{margin-top:0}
+.identity-portrait{position:relative;margin:0 0 2.8rem;padding-bottom:3.4rem;isolation:isolate}
+.identity-art{position:relative;height:clamp(190px,20vw,260px);background:#940b18;overflow:hidden;box-shadow:0 0 55px #8a101025}
+.identity-art img{width:100%;height:100%;object-fit:cover;object-position:34% 38%;filter:grayscale(1) contrast(1.55);mix-blend-mode:multiply;transform:scale(2.6);transform-origin:34% 38%}
+.identity-art::after{content:"";position:absolute;inset:0;background-image:var(--grain);background-size:120px;opacity:.24;mix-blend-mode:overlay;pointer-events:none}
+.identity-english{position:absolute;left:0;bottom:0;right:0;z-index:1;color:#f8f8f8;text-shadow:0 2px 18px #0008;font-family:var(--display);font-weight:600;line-height:1;font-size:clamp(2.7rem,5.4vw,4.8rem);white-space:nowrap;letter-spacing:-.065em}
+.identity-hindi{position:absolute;right:0;bottom:0;z-index:2;color:#f8f8f8;font-family:"Noto Serif Devanagari",serif;font-weight:600;font-size:clamp(2rem,3.6vw,3rem);line-height:1.5;text-shadow:0 3px 16px #000}
+.experience h3{font-family:Inter,sans-serif;font-weight:500;text-transform:uppercase;font-size:.8rem;letter-spacing:.12em;color:#c2c2c2;margin-bottom:1.7rem}
+.experience-row{padding:0;margin-top:1.35rem}
+.experience-row h4{font-weight:500;font-size:1rem}
+.experience-row>p:not(.meta){font-size:.875rem;color:#c2c2c2}
+.experience-row .meta{font-size:.75rem;color:#aaa}
+.section-heading h2{font-family:var(--display);font-weight:400;font-size:clamp(3.4rem,6.4vw,5.5rem);letter-spacing:-.045em;line-height:1.06}
+.section-heading{margin-bottom:2.8rem}
+.project>p{font-size:.9375rem}
+.project-heading{margin-bottom:.4rem}
+.project-image{box-shadow:0 6px 25px #120b0b07}
+.film-section{color:#f8f8f8;padding:6.5rem 0}
+.film-section .section-heading h2{color:#f8f8f8;text-shadow:0 0 20px #ffffff14}
+.film-section .film-caption>span,.film-section .meta{color:#c2c2c2}
+.film-section .film-archive{border-color:#414141}
+.film-thumbnail{box-shadow:0 0 0 1px #ffffff14}
+.film-thumbnail::after{content:none}
+.film-card:hover .film-thumbnail{box-shadow:0 0 0 1px #bc2a3666,0 0 26px #ad1b1920}
+.film-caption strong{font-weight:500;font-size:1.2rem}
+.photo-grid{display:block;columns:3;column-gap:1.2rem}.photo-grid .photo{width:100%;aspect-ratio:auto;break-inside:avoid;margin-bottom:1.2rem}.photo-grid .photo img{height:auto;object-fit:contain}
+.photo{position:relative;box-shadow:none}
+.photo::after{content:none}
+.photo:hover img{transform:scale(1.015)}
+.contact-section h2{font-family:var(--display);font-weight:400;letter-spacing:-.045em;line-height:1.06;font-size:clamp(4rem,8vw,7rem);margin-bottom:2.8rem}
+.recognition-grid strong{font-family:Inter,sans-serif;font-weight:500;font-size:1.6rem;line-height:1.1;letter-spacing:-.03em}
+.reveal-pending{opacity:0;transform:translateY(12px)}
+.reveal-in{animation:scene-in .6s cubic-bezier(.2,.7,.2,1) both}
+@keyframes scene-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:760px){.about-panel{padding:4rem 0}.about-grid{grid-template-columns:1fr;gap:3rem}.about-copy h2{font-size:clamp(4.6rem,11vw,6rem)}.about-right{display:grid;grid-template-columns:1fr 1.15fr;gap:2rem}.identity-portrait{margin:0}.identity-art{height:220px}.identity-english{font-size:clamp(2.4rem,5.6vw,3.8rem)}.identity-hindi{font-size:2rem}.film-section{padding:4rem 0}.photo-grid{gap:.75rem}.section-heading h2{font-size:clamp(3rem,7.5vw,4.5rem)}}
+@media(max-width:560px){.about-right{display:block}.identity-portrait{max-width:420px;margin:0 auto 2.5rem;padding-bottom:3rem}.identity-art{height:230px}.identity-english{font-size:clamp(2.8rem,11.5vw,4.2rem)}.identity-hindi{font-size:2.4rem}.about-copy h2{font-size:clamp(4.5rem,19vw,6rem)}.about-links{gap:1.5rem}.cover-bottom{margin-top:2rem}.photo-grid{columns:2;column-gap:.75rem}.photo-grid .photo{margin-bottom:.75rem}.section-heading h2{font-size:clamp(2.9rem,12vw,4rem)}.contact-section h2{font-size:4rem}.recognition-grid strong{font-size:1.5rem}.film-caption strong{font-size:1.2rem}}
+@media(prefers-reduced-motion:reduce){body::before{animation:none;will-change:auto}.reveal-pending{opacity:1;transform:none}.reveal-in{animation:none}.film-card:hover img,.photo:hover img{transform:none}}
+@media(prefers-contrast:more){body::before,body::after,.portrait::after,.identity-art::after,.photo::after,.film-thumbnail::after{display:none}.about-panel,.film-section,.contact-section{background:#000}.about-copy h2 span{color:#ff9295}}
+@media(prefers-reduced-transparency:reduce){body::before,body::after,.portrait::after,.identity-art::after,.photo::after,.film-thumbnail::after{display:none}}
+html{scroll-padding-top:0}
+
+
+/* Cover: intact source photograph, separate ink and selective-color layers. */
+.cover-center{justify-self:center;width:100%}
+.portrait{aspect-ratio:1.39455;transform:none;box-shadow:none;mask-mode:luminance;-webkit-mask-image:url("assets/portrait-ink-wash-mask.png");mask-image:url("assets/portrait-ink-wash-mask.png");-webkit-mask-size:100% 100%;mask-size:100% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+.portrait>img{filter:none}
+.portrait-accent{position:absolute;inset:0;width:100%;height:100%;mix-blend-mode:color;pointer-events:none}
+.portrait::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:radial-gradient(ellipse at 43% 47%,transparent 48%,#08030336 100%),var(--grain);
+  background-size:100% 100%,180px 180px;opacity:.35;mix-blend-mode:multiply}
+.portrait::after{content:none}
+.cover-name{color:#b71b29;text-shadow:none;filter:none;transform:none;-webkit-font-smoothing:auto}
+.cover-year{font-size:.875rem;text-transform:uppercase;letter-spacing:.24em;padding-left:.24em;margin-top:.45rem}
+.cover-camera{margin:10rem 0 0;justify-self:end;width:clamp(120px,14vw,200px);text-align:center;color:var(--red)}
+.cover-camera img{width:100%;height:auto;margin:auto}
+.cover-camera figcaption{font:400 .875rem/1.4 var(--display);font-style:italic;letter-spacing:0;margin-top:.35rem;white-space:nowrap}
+/* A narrow feather at section boundaries; the section interiors stay pure black. */
+.about-panel::before,.film-section::before,.contact-section::before,
+.about-panel::after,.film-section::after{content:"";position:absolute;left:0;right:0;height:12px;pointer-events:none;z-index:3}
+.about-panel::before,.film-section::before,.contact-section::before{top:0;background:linear-gradient(to bottom,var(--canvas),#f8f8f880 15%,#f8f8f818 55%,transparent)}
+.about-panel::after,.film-section::after{bottom:0;background:linear-gradient(to top,var(--canvas),#f8f8f880 15%,#f8f8f818 55%,transparent)}
+@media(max-width:760px){.cover-camera{width:120px;margin-top:9rem}.cover{column-gap:1.5rem}}
+@media(max-width:560px){
+  .cover-camera{position:absolute;top:1rem;right:var(--gutter);width:84px;margin:0}
+  .cover-camera figcaption{font-size:.75rem;margin-top:0}
+  .cover-english{top:2.2rem}
+}
+@media(prefers-contrast:more),(prefers-reduced-transparency:reduce){
+  .portrait{mask-image:none;-webkit-mask-image:none}
+  .portrait::before,.portrait::after,.identity-art::after,
+  .about-panel::before,.about-panel::after,.film-section::before,.film-section::after,.contact-section::before{display:none}
+}
+
+/* Equal side columns keep the portrait optically centered as the camera shrinks. */
+.cover{grid-template-columns:minmax(0,1fr) minmax(0,min(660px,67svh)) minmax(0,1fr)}
+@media(max-width:1100px){.cover{grid-template-columns:minmax(0,1fr) minmax(0,560px) minmax(0,1fr)}}
+@media(max-width:760px){.cover{grid-template-columns:minmax(0,1fr) minmax(0,min(430px,60vw)) minmax(0,1fr)}.cover-camera{width:84px}}
+@media(max-width:560px){.cover{grid-template-columns:1fr}}
+
+/* Let the vintage line drawing remain readable beside the larger portrait. */
+@media(min-width:561px) and (max-width:760px){.cover-camera{width:112px}}
+
+/* Center the entire cover composition in the viewport, accounting for its header. */
+.cover{--cover-header:5.5rem;min-height:calc(100svh - var(--cover-header));padding-top:0;padding-bottom:var(--cover-header);grid-template-rows:minmax(0,1fr);align-items:center}
+.cover-center{grid-column:2;grid-row:1;align-self:center;margin:0}
+.cover-english{grid-column:1;grid-row:1;align-self:center;margin-top:0}
+.cover-camera{grid-column:3;grid-row:1;align-self:center;margin-top:0}
+.cover-bottom{position:absolute;right:var(--gutter);bottom:2rem;margin:0;justify-content:flex-end}
+@media(max-width:760px){.cover{--cover-header:4.7rem}}
+@media(max-width:560px){
+  .cover-center{grid-column:1;margin:0 auto}
+  .cover-english{margin:0}
+  .cover-camera{margin:0}
+  .cover-bottom{bottom:1.5rem}
+}
+
+.cover{scroll-margin-top:var(--cover-header)}
