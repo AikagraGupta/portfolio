@@ -1,36 +1,41 @@
-# Aikagra Gupta Portfolio
+# Aikagra Gupta · एकाग्र
 
-A static, deploy-ready portfolio built with HTML, CSS, and JavaScript. It has no build step or package dependencies.
+A static portfolio at https://aikagra.vercel.app/, built with HTML, CSS, and JavaScript. No package dependencies or build step.
 
-## Preview locally
+## Local preview
 
-Open `index.html` directly, or run a small local server from this folder:
+Serve this directory over HTTP so the video archive can load `media.json`:
 
 ```powershell
-python -m http.server 4173
+python -m http.server 4187
 ```
 
-Then visit `http://localhost:4173`.
+Open http://localhost:4187.
 
-## Deploy
+## Deployment
 
-### Vercel or Netlify
+The Vercel project is `portfolio`, under `aikagras-projects`. From this folder:
 
-Drag this entire `portfolio` folder into the provider's upload interface. Keep the `assets` folder beside `index.html`.
+```powershell
+vercel --prod --yes
+```
 
-### GitHub Pages
+Keep the complete assets directory in each deployment. Ten optimized H.264/AAC films are hosted directly from `assets/films/`; Google Drive originals remain linked in the viewer. Videos load only when opened.
 
-Upload the contents of this folder to a repository, enable Pages for the branch, and use the repository root as the publishing directory.
+## Content
 
-## Update content
+- `index.html`: biography, projects, experience, and contact details
+- `styles.css`: the white/deep-red design, responsive layouts, and accessibility preferences
+- `script.js`: navigation and native video/photography dialogs
+- `media.json`: ten films, titles, durations, aspect ratios, and original-file links
+- `assets/films/`: web video exports and real frame posters
+- `assets/gallery/`: sixteen Shanghai and Malaysia photographs
+- `assets/novo-website.jpg`: actual heynovo.ai website capture
+- `assets/aikagra-childhood-restored.png`: restored monochrome childhood portrait
+- `assets/Aikagra_Gupta_CV.pdf`: résumé
 
-- Personal and project copy: `index.html`
-- Colors, typography, and layout: `styles.css`
-- Menu, progress rail, and active project index: `script.js`
-- Résumé and screenshots: `assets/`
+The user selected Khaled Mehran's Portfolio 2026 as the visual reference and confirmed the name spelling **एकाग्र**. See `DESIGN.md` for the design decisions.
 
-Replace a screenshot while keeping the same filename to update it without changing the HTML.
+## Design guidance
 
-## Privacy note
-
-The site includes the email, LinkedIn, and GitHub details supplied in the CV. It leaves the phone number off the public page.
+`.design-rules` is the requested apple-design-skill Git submodule. Clone with `git clone --recurse-submodules`, or run `git submodule update --init` in an existing checkout. Follow `AGENTS.md` for reviews. Design guidance is excluded from deployment with `.vercelignore`.

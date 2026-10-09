@@ -1,0 +1,122 @@
+[
+  {
+    "id": "herald",
+    "title": "Herald",
+    "category": "Product demo",
+    "duration": 22,
+    "width": 1920,
+    "height": 1080,
+    "bytes": 1402018,
+    "poster": "assets/films/herald.jpg",
+    "src": "assets/films/herald.mp4",
+    "original": "https://drive.google.com/file/d/1-maCHvzu8l0oEwHU_Ir4Tx8VFnQbL1y1/view"
+  },
+  {
+    "id": "dreamcatcher",
+    "title": "Dreamcatcher",
+    "category": "Film",
+    "duration": 71,
+    "width": 1080,
+    "height": 1920,
+    "bytes": 7888423,
+    "poster": "assets/films/dreamcatcher.jpg",
+    "src": "assets/films/dreamcatcher.mp4",
+    "original": "https://drive.google.com/file/d/1WzbNs2xmz8v9wq1PIrEBtK2QHrGj42hT/view"
+  },
+  {
+    "id": "hello-claire",
+    "title": "Hello Claire",
+    "category": "Film",
+    "duration": 28,
+    "width": 3840,
+    "height": 2160,
+    "bytes": 3983010,
+    "poster": "assets/films/hello-claire.jpg",
+    "src": "assets/films/hello-claire.mp4",
+    "original": "https://drive.google.com/file/d/19AMPOXmhiZIS7L5YDGjRpmADsHdgZfzj/view"
+  },
+  {
+    "id": "digex-2025",
+    "title": "Digex 2025",
+    "category": "Trailer",
+    "duration": 55,
+    "width": 1920,
+    "height": 1080,
+    "bytes": 7193447,
+    "poster": "assets/films/digex-2025.jpg",
+    "src": "assets/films/digex-2025.mp4",
+    "original": "https://drive.google.com/file/d/14UVIse3Ii5rOlHTYP5wYk9zV4FPhpzFV/view"
+  },
+  {
+    "id": "digex-film",
+    "title": "Digex Movie",
+    "category": "Film",
+    "duration": 68,
+    "width": 3840,
+    "height": 2160,
+    "bytes": 9860882,
+    "poster": "assets/films/digex-film.jpg",
+    "src": "assets/films/digex-film.mp4",
+    "original": "https://drive.google.com/file/d/1AJUWMJ601KzGPMTPkLVo98sdFBDMRsSF/view"
+  },
+  {
+    "id": "digex-2024",
+    "title": "Digex 2024",
+    "category": "Trailer",
+    "duration": 45,
+    "width": 3840,
+    "height": 2160,
+    "bytes": 9336587,
+    "poster": "assets/films/digex-2024.jpg",
+    "src": "assets/films/digex-2024.mp4",
+    "original": "https://drive.google.com/file/d/13eisYSiaWcW626Gt6HkYwD83rZuL-GaP/view"
+  },
+  {
+    "id": "exun",
+    "title": "Exun",
+    "category": "Trailer",
+    "duration": 97,
+    "width": 1920,
+    "height": 1080,
+    "bytes": 17647586,
+    "poster": "assets/films/exun.jpg",
+    "src": "assets/films/exun.mp4",
+    "original": "https://drive.google.com/file/d/11He8Lknx5W5R6wCUSSH45iVhfrqY5hkW/view"
+  },
+  {
+    "id": "digex-2023",
+    "title": "Digex 2023",
+    "category": "Trailer",
+    "duration": 60,
+    "width": 1280,
+    "height": 720,
+    "bytes": 3473247,
+    "poster": "assets/films/digex-2023.jpg",
+    "src": "assets/films/digex-2023.mp4",
+    "original": "https://drive.google.com/file/d/1srlHUGaLdsqi0Y1OKhRJ29MRlVzD0w6d/view"
+  },
+  {
+    "id": "mtsi",
+    "title": "MTSI",
+    "category": "Video",
+    "duration": 28,
+    "width": 1280,
+    "height": 720,
+    "bytes": 1682187,
+    "poster": "assets/films/mtsi.jpg",
+    "src": "assets/films/mtsi.mp4",
+    "original": "https://drive.google.com/file/d/1ehNtG7j58aJXNNkRt1jjQbLVj5I9xc2v/view"
+  },
+  {
+    "id": "aquaallies",
+    "title": "AquaAllies",
+    "category": "Product demo",
+    "duration": 39,
+    "width": 1920,
+    "height": 1080,
+    "bytes": 2837524,
+    "poster": "assets/films/aquaallies.jpg",
+    "src": "assets/films/aquaallies.mp4",
+    "original": "https://drive.google.com/file/d/1Ljdp2oS6K6eJWIsrBpiUyEYam2lrKP8Y/view"
+  }
+]
