@@ -77,3 +77,12 @@ Keep native buttons, details, dialog, and video controls. `playing-video.md › 
 `motion.md › Best practices`: "Make motion optional." Grain uses small stepped position changes, never brightness flashes or moving text. Scene entrances respect reduced motion; higher contrast and reduced transparency remove the grain. `branding.md › Best practices`: "Ensure branding always defers to content." Project descriptions and controls keep straightforward language.
 
 Visual review covered regular and compact layouts. There is no claim of a complete assistive-technology audit or caption coverage for every film.
+
+
+## October 9 refinement: minimal film treatment
+
+User direction supersedes the earlier slogan and condensed type choices. Dark sections now use #000000, with visible grain and no colored background gradients. Bodoni Moda supplies large cinematic titles; Inter keeps controls and small text readable. Removed slogans, repeated section descriptions, and experience detail paragraphs. Project summaries are one line with contribution details still available on demand. All em dashes were removed from the HTML.
+
+HIG foundations applied for this static website: typography.md > Ensuring legibility and Conveying hierarchy; writing.md > Getting started (Be clear); layout.md > Visual hierarchy (progressive disclosure); motion.md > Best practices (Make motion optional); collections.md > Best practices (standard grid). Grain remains optional under reduced transparency and increased contrast, and animation stops under reduced motion. Pure black is the user’s explicit palette choice. White #f8f8f8 on black is approximately 19.8:1 before the decorative grain layer.
+
+Loaded the complete public VSCO gallery of 28 photographs through the visible Load more control, imported every file to the local working archive, and selected 22 city/travel/environment photographs. Six appear initially, including the Shanghai clock tower, waterfront, river boat, market, hillside, and misty gateway. Six unwanted portrait/cat/object images are excluded from the published gallery. The broader selection retains all relevant destinations without limiting the gallery heading to a place.
