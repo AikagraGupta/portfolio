@@ -103,3 +103,15 @@ User rejected the reconstructed seated pose. The cover and About now use the pre
 ## Honors and photo selection update
 
 Replaced the general learning milestone with HPE CodeWars, Winner, 2023, as supplied by the user. Featured the dragon, red bird, and white bird photographs alongside Shanghai, the skyline, and the street market. Removed the boat, misty gateway, and Shimla hillside photograph from the gallery. Nineteen photographs remain: six featured and thirteen under More photographs, without duplicates.
+
+## October 9 cover finish: sharp lettering and photograph-only texture
+
+Applied the apple-design foundations to this static web portfolio. Relevant guidance: typography.md > Ensuring legibility and Conveying hierarchy; color.md > Inclusive color; image-views.md > Content; layout.md > Visual hierarchy; accessibility.md > Vision. Platform translation remains web-specific.
+
+Removed the title's soft text shadows and kept real Noto Serif Devanagari at weight 900, with no image rasterization or filter. Cover red is #b71b29, lighter than the previous #8f0d17. Calculated contrast is 6.17:1 on #f8f8f8 and 3.20:1 on black. Actual image backgrounds vary; the title mostly crosses the lighter wooden rail and continues onto the pale canvas. Tiny camera caption retains dark #8f0d17 on paper.
+
+The accepted 1481 by 1062 leaning portrait file is unchanged. All focus treatment uses separate CSS layers: corner shading, a feathered edge mask, a stronger transparent ink border, and one SVG color shape registered to the little embroidered sweater detail. No generated face, reconstructed pose, blur, or changed facial pixels. Photo stays centered at its original aspect ratio.
+
+Removed both global grain/scratch overlays and film/gallery noise overlays. Texture is confined to the cover and About photographs. The Devanagari and page canvas stay clean. Added a generated transparent black-and-ivory engraved Sony A7 III with a thin red ring, using Sony's official front-side shape diagram as reference. Caption is real text: a7iii and a dream. Prompt saved in design/a7iii-ink-prompt.md.
+
+Added a 12px edge feather between pale and black sections. Black interiors remain #000000. Higher contrast/reduced transparency disable decorative texture, masks, and section feathers. Local visual inspection covered the cover and About section. No automated tests were run.

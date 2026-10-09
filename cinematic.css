@@ -1,11 +1,11 @@
 /* Archival film: pure black, red ink, visible grain, quiet copy. */
 :root{--film-red:#8f0d17;--film-light:#bc2a36;--film-black:#000000;--display:"Bodoni Moda",Didot,"Times New Roman",serif;--grain:url("assets/film-grain.svg")}
-body::before{content:"";position:fixed;inset:-20%;z-index:50;pointer-events:none;background-image:var(--grain);background-size:190px 190px;opacity:.075;animation:film-grain 1.8s steps(5,end) infinite;will-change:transform}
-body::after{content:"";position:fixed;inset:0;z-index:49;pointer-events:none;opacity:.055;background:linear-gradient(transparent,#aaa 30%,transparent 85%) 8% 0/1px 75% no-repeat,linear-gradient(transparent,#999 15%,transparent 90%) 91% 100%/1px 60% no-repeat}
+body::before{content:none}
+body::after{content:none}
 @keyframes film-grain{0%,100%{transform:translate(0,0)}20%{transform:translate(-1.2%,.8%)}40%{transform:translate(1%,-.9%)}60%{transform:translate(-.6%,-1.2%)}80%{transform:translate(.9%,.6%)}}
 .portrait{position:relative;isolation:isolate;transform:rotate(-.5deg);box-shadow:0 12px 40px #25151916}
 .portrait::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:var(--grain),radial-gradient(ellipse at center,transparent 50%,#10060655 100%);opacity:.2;mix-blend-mode:multiply}
-.cover-name{text-shadow:1px 0 #8f121555,0 0 2px #9e1414,0 0 22px #8f0d1720}
+.cover-name{color:#b71b29;text-shadow:none;filter:none}
 .cover-bottom{margin-top:2.2rem}
 .about-panel,.film-section,.contact-section{position:relative;overflow:hidden;isolation:isolate;background:var(--film-black)}
 .about-panel{padding:6.5rem 0}
@@ -38,12 +38,12 @@ body::after{content:"";position:fixed;inset:0;z-index:49;pointer-events:none;opa
 .film-section .film-caption>span,.film-section .meta{color:#c2c2c2}
 .film-section .film-archive{border-color:#414141}
 .film-thumbnail{box-shadow:0 0 0 1px #ffffff14}
-.film-thumbnail::after{content:"";position:absolute;inset:0;pointer-events:none;background:var(--grain);opacity:.035}
+.film-thumbnail::after{content:none}
 .film-card:hover .film-thumbnail{box-shadow:0 0 0 1px #bc2a3666,0 0 26px #ad1b1920}
 .film-caption strong{font-weight:500;font-size:1.2rem}
 .photo-grid{display:block;columns:3;column-gap:1.2rem}.photo-grid .photo{width:100%;aspect-ratio:auto;break-inside:avoid;margin-bottom:1.2rem}.photo-grid .photo img{height:auto;object-fit:contain}
 .photo{position:relative;box-shadow:none}
-.photo::after{content:"";position:absolute;inset:0;pointer-events:none;background:var(--grain);opacity:.025}
+.photo::after{content:none}
 .photo:hover img{transform:scale(1.015)}
 .contact-section h2{font-family:var(--display);font-weight:400;letter-spacing:-.045em;line-height:1.06;font-size:clamp(4rem,8vw,7rem);margin-bottom:2.8rem}
 .recognition-grid strong{font-family:Inter,sans-serif;font-weight:500;font-size:1.6rem;line-height:1.1;letter-spacing:-.03em}
@@ -57,6 +57,39 @@ body::after{content:"";position:fixed;inset:0;z-index:49;pointer-events:none;opa
 @media(prefers-reduced-transparency:reduce){body::before,body::after,.portrait::after,.identity-art::after,.photo::after,.film-thumbnail::after{display:none}}
 html{scroll-padding-top:0}
 
-/* Preserve the restored photograph; ink is a separate edge-only layer. */
-.portrait{aspect-ratio:1.39455;transform:none;box-shadow:none}.portrait::after{display:block;background-image:url("assets/portrait-ink-edges.png");background-size:100% 100%;background-repeat:no-repeat;opacity:.3;mix-blend-mode:multiply}
+
+/* Cover: intact source photograph, separate ink and selective-color layers. */
+.cover-center{justify-self:center;width:100%}
+.portrait{aspect-ratio:1.39455;transform:none;box-shadow:none;
+  -webkit-mask-image:linear-gradient(to right,transparent,#000 3.5%,#000 96.5%,transparent),linear-gradient(to bottom,transparent,#000 4%,#000 96%,transparent);
+  -webkit-mask-composite:source-in;
+  mask-image:linear-gradient(to right,transparent,#000 3.5%,#000 96.5%,transparent),linear-gradient(to bottom,transparent,#000 4%,#000 96%,transparent);
+  mask-composite:intersect}
+.portrait>img{filter:none}
+.portrait-accent{position:absolute;inset:0;width:100%;height:100%;mix-blend-mode:color;pointer-events:none}
+.portrait::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:radial-gradient(ellipse at 43% 47%,transparent 48%,#08030336 100%),var(--grain);
+  background-size:100% 100%,180px 180px;opacity:.35;mix-blend-mode:multiply}
+.portrait::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:url("assets/portrait-ink-edges.png") center/100% 100% no-repeat;opacity:.85;mix-blend-mode:multiply}
+.cover-name{color:#b71b29;text-shadow:none;filter:none;transform:none;-webkit-font-smoothing:auto}
 .cover-year{font-size:.875rem;text-transform:uppercase;letter-spacing:.24em;padding-left:.24em;margin-top:.45rem}
+.cover-camera{margin:10rem 0 0;justify-self:end;width:clamp(120px,14vw,200px);text-align:center;color:var(--red)}
+.cover-camera img{width:100%;height:auto}
+.cover-camera figcaption{font:400 .875rem/1.4 var(--display);font-style:italic;letter-spacing:0;margin-top:.35rem;white-space:nowrap}
+/* A narrow feather at section boundaries; the section interiors stay pure black. */
+.about-panel::before,.film-section::before,.contact-section::before,
+.about-panel::after,.film-section::after{content:"";position:absolute;left:0;right:0;height:12px;pointer-events:none;z-index:3}
+.about-panel::before,.film-section::before,.contact-section::before{top:0;background:linear-gradient(to bottom,var(--canvas),#f8f8f880 15%,#f8f8f818 55%,transparent)}
+.about-panel::after,.film-section::after{bottom:0;background:linear-gradient(to top,var(--canvas),#f8f8f880 15%,#f8f8f818 55%,transparent)}
+@media(max-width:760px){.cover-camera{width:120px;margin-top:9rem}.cover{column-gap:1.5rem}}
+@media(max-width:560px){
+  .cover-camera{position:absolute;top:1rem;right:var(--gutter);width:84px;margin:0}
+  .cover-camera figcaption{font-size:.75rem;margin-top:0}
+  .cover-english{top:2.2rem}
+}
+@media(prefers-contrast:more),(prefers-reduced-transparency:reduce){
+  .portrait{mask-image:none;-webkit-mask-image:none}
+  .portrait::before,.portrait::after,.identity-art::after,
+  .about-panel::before,.about-panel::after,.film-section::before,.film-section::after,.contact-section::before{display:none}
+}
