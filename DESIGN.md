@@ -86,3 +86,10 @@ User direction supersedes the earlier slogan and condensed type choices. Dark se
 HIG foundations applied for this static website: typography.md > Ensuring legibility and Conveying hierarchy; writing.md > Getting started (Be clear); layout.md > Visual hierarchy (progressive disclosure); motion.md > Best practices (Make motion optional); collections.md > Best practices (standard grid). Grain remains optional under reduced transparency and increased contrast, and animation stops under reduced motion. Pure black is the user’s explicit palette choice. White #f8f8f8 on black is approximately 19.8:1 before the decorative grain layer.
 
 Loaded the complete public VSCO gallery of 28 photographs through the visible Load more control, imported every file to the local working archive, and selected 22 city/travel/environment photographs. Six appear initially, including the Shanghai clock tower, waterfront, river boat, market, hillside, and misty gateway. Six unwanted portrait/cat/object images are excluded from the published gallery. The broader selection retains all relevant destinations without limiting the gallery heading to a place.
+
+
+## October 9 portrait and palette refinement
+
+The user accepted the layout and requested a return to the earlier subtle grain, darker reds, and a Since 2007 cover. Restored the global noise opacity to .075 and the SVG contrast curve to its earlier value. Pure black #000000 remains the foundation; no background gradients lift it. The red on paper is #8f0d17, while large display text on black uses #bc2a36. The monochrome hero is a built-in image_gen artistic pose/background reconstruction: seated upright against black ink washes. The original and earlier restored photograph remain intact. The portrait prompt is saved in design/ink-portrait-prompt.md.
+
+Applied color.md > Inclusive color and image-views.md > Content to preserve readable image overlays. The face crop now centers on the upright portrait, with lighter added texture.
