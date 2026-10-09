@@ -10,14 +10,14 @@
     "height": 1398
   },
   {
-    "id": "698e0d4c7d6d727838042e1c",
-    "title": "River",
-    "alt": "A red boat passing colorful buildings along a river",
+    "id": "69bc118f3a7626832d822d99",
+    "title": "Dragon",
+    "alt": "A dragon sculpture traced by warm light",
     "featured": true,
-    "src": "assets/vsco/698e0d4c7d6d727838042e1c.jpg",
-    "original": "https://vsco.co/aikagra/media/698e0d4c7d6d727838042e1c",
-    "width": 1136,
-    "height": 1959
+    "src": "assets/vsco/69bc118f3a7626832d822d99.jpg",
+    "original": "https://vsco.co/aikagra/media/69bc118f3a7626832d822d99",
+    "width": 960,
+    "height": 1623
   },
   {
     "id": "69bc129f73440b1e7e13fe01",
@@ -40,24 +40,24 @@
     "height": 1008
   },
   {
-    "id": "698e141625954976690ecc91",
-    "title": "Hills",
-    "alt": "A hillside town beneath cloudy skies",
+    "id": "69bc11556db3d0bd49481c14",
+    "title": "Red bird",
+    "alt": "A red illuminated bird sculpture with outstretched wings",
     "featured": true,
-    "src": "assets/vsco/698e141625954976690ecc91.jpg",
-    "original": "https://vsco.co/aikagra/media/698e141625954976690ecc91",
+    "src": "assets/vsco/69bc11556db3d0bd49481c14.jpg",
+    "original": "https://vsco.co/aikagra/media/69bc11556db3d0bd49481c14",
     "width": 960,
-    "height": 540
+    "height": 1706
   },
   {
-    "id": "698e1467cec1f67403e28ccc",
-    "title": "Gateway",
-    "alt": "A wooden gateway surrounded by mist",
+    "id": "69bc125c6db3d0bd49481d39",
+    "title": "White bird",
+    "alt": "A white illuminated bird sculpture suspended above a red interior",
     "featured": true,
-    "src": "assets/vsco/698e1467cec1f67403e28ccc.jpg",
-    "original": "https://vsco.co/aikagra/media/698e1467cec1f67403e28ccc",
-    "width": 960,
-    "height": 540
+    "src": "assets/vsco/69bc125c6db3d0bd49481d39.jpg",
+    "original": "https://vsco.co/aikagra/media/69bc125c6db3d0bd49481d39",
+    "width": 1050,
+    "height": 1599
   },
   {
     "id": "6a74cc1924e421474b796655",
@@ -78,16 +78,6 @@
     "original": "https://vsco.co/aikagra/media/6a74cc19c6341f6b5eb0a31a",
     "width": 1136,
     "height": 1489
-  },
-  {
-    "id": "69bc118f3a7626832d822d99",
-    "title": "Dragon",
-    "alt": "A dragon sculpture traced by warm light",
-    "featured": false,
-    "src": "assets/vsco/69bc118f3a7626832d822d99.jpg",
-    "original": "https://vsco.co/aikagra/media/69bc118f3a7626832d822d99",
-    "width": 960,
-    "height": 1623
   },
   {
     "id": "698e14758b1ab44254d1fb65",
@@ -130,16 +120,6 @@
     "height": 782
   },
   {
-    "id": "69bc11556db3d0bd49481c14",
-    "title": "Bird",
-    "alt": "An illuminated bird sculpture after dark",
-    "featured": false,
-    "src": "assets/vsco/69bc11556db3d0bd49481c14.jpg",
-    "original": "https://vsco.co/aikagra/media/69bc11556db3d0bd49481c14",
-    "width": 960,
-    "height": 1706
-  },
-  {
     "id": "6ab9462cd3d9e79dcf0f57c0",
     "title": "Festival",
     "alt": "Colorful illuminated decorations at night",
@@ -158,16 +138,6 @@
     "original": "https://vsco.co/aikagra/media/69bc12b761de4c5b4eb5e8fe",
     "width": 1600,
     "height": 900
-  },
-  {
-    "id": "69bc125c6db3d0bd49481d39",
-    "title": "Temple",
-    "alt": "A brightly lit temple with a bird sculpture",
-    "featured": false,
-    "src": "assets/vsco/69bc125c6db3d0bd49481d39.jpg",
-    "original": "https://vsco.co/aikagra/media/69bc125c6db3d0bd49481d39",
-    "width": 1050,
-    "height": 1599
   },
   {
     "id": "6a74cc19c6341f6b5eb0a31b",

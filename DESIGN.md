@@ -98,3 +98,8 @@ Applied color.md > Inclusive color and image-views.md > Content to preserve read
 ## Restore the leaning portrait
 
 User rejected the reconstructed seated pose. The cover and About now use the previous restored leaning photograph again. The underlying asset is unchanged, with original 1481 by 1062 dimensions and full aspect ratio. Added only a separate generated transparent ink-edge overlay at 30% opacity on the cover. The central image is not regenerated. Restored the About face crop for the leaning pose. Since 2007, the accepted minimal layout, deeper reds, pure black, and reduced grain remain in place. Prompt saved in design/ink-edge-prompt.md.
+
+
+## Honors and photo selection update
+
+Replaced the general learning milestone with HPE CodeWars, Winner, 2023, as supplied by the user. Featured the dragon, red bird, and white bird photographs alongside Shanghai, the skyline, and the street market. Removed the boat, misty gateway, and Shimla hillside photograph from the gallery. Nineteen photographs remain: six featured and thirteen under More photographs, without duplicates.
