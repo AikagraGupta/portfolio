@@ -18,6 +18,7 @@ The Vercel project is `portfolio`, under `aikagras-projects`. From this folder:
 
 ```powershell
 vercel --prod --yes
+vercel alias set <production-deployment-url> aikagra.vercel.app
 ```
 
 Keep the complete assets directory in each deployment. Ten optimized H.264/AAC films are hosted directly from `assets/films/`; Google Drive originals remain linked in the viewer. Videos load only when opened. The film section features Dreamcatcher, Herald, and Digex 2024. Its expandable archive excludes featured IDs and duplicate sources, and displays the remaining seven videos.
