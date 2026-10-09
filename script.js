@@ -79,7 +79,7 @@ mediaPromise.then(films => {
 
 // Scene entrances preserve native scrolling and stay optional.
 if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  const scenes = document.querySelectorAll('.about-copy, .identity-portrait, .experience, .section-heading, .project, .film-grid, #photo-grid');
+  const scenes = document.querySelectorAll('.about-copy, .identity-portrait, .experience, .section-heading, .project, .film-card, #photo-grid .photo');
   const sceneObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;

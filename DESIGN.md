@@ -135,3 +135,8 @@ User requested black. Recolored the vintage front camera with imagegen: solid bl
 ## Center cover composition and remove descriptor
 
 Centered the portrait, Devanagari title and Since 2007 as one group horizontally and vertically in the viewport. Header-aware cover padding balances the space above and below the group. Left name and right camera align with the group; the Selected work link is independently pinned near the lower right. Removed the Websites / Films / Photography bottom-left descriptor from the HTML. Image, grain and ink treatment are unchanged. Applied layout.md > Visual hierarchy (group related items and align elements) and Adaptability.
+
+
+## Cinematic sizing and pacing
+
+Researched cinematic attention, shot scale and a filmmaker website case study; sources and limitations are documented in design/cinematic-research.md. Added cinematic-scale.css after the existing treatments. Increased content width to 1440px, strengthened title-to-caption hierarchy, and expanded scene spacing. Novo and Herald now have alternating wide feature rows. Films have larger native-ratio frames, photography alternates portrait pairs and wide views, and the media viewer is pure black. Reveal motion applies to individual frames and respects reduced motion. Mobile layouts stack the feature rows and reduce display sizes. The approved portrait, ink dissolve, black camera, photograph-only grain, brief copy and Since 2007 remain. Visually reviewed desktop and narrow layouts plus the Herald viewer. No automated tests were run.
