@@ -150,3 +150,12 @@ User liked the serif character but the Bodoni Moda display hairlines nearly disa
 ## Restore the previous display font
 
 At the user’s request, restored Bodoni Moda and all original display font weights from ff033fd. Cinematic layout and sizing remain as previously approved.
+
+
+## Smooth scrolling and small interactions
+
+Added locally vendored Lenis 1.3.26 (MIT), following https://github.com/darkroomengineering/lenis. Wheel scrolling uses lerp .11; internal anchors ease for 1.1 seconds. Touch and keyboard retain native scrolling, reduced motion is honored live, native anchors remain a fallback, and the page stops smoothing while a media dialog is open. Dialog content uses data-lenis-prevent to preserve nested scrolling.
+
+Converted the existing camera art to a labeled native button. Fine-pointer motion tilts it by at most 4/5 degrees with a small red lens highlight and discoverable hover/focus hint. Activating it opens the next featured photograph, starting with Dragon. Keyboard and touch activation share the same action, and focus returns to the camera on close. Added brief link-arrow gestures, nav underline reveals, film play-button feedback, a short viewer entrance and up to 195ms of scene reveal staggering. Reduced motion removes decorative movement. The accepted camera art, portrait, fonts, grain and layouts remain.
+
+Applied motion.md > Best practices / Providing feedback, buttons.md > Best practices / Content, pointing-devices.md > Pointer shape and content effects, and feedback.md > Best practices from the Apple design skill as web principles. Visually reviewed camera-to-photo opening, dialog close/focus return and smooth section navigation. No automated tests were added or run.

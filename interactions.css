@@ -1,0 +1,31 @@
+/* Small gestures tied to navigation and the camera, never continuous motion. */
+html.lenis{scroll-behavior:auto!important}
+.camera-button{position:relative;display:block;width:100%;min-height:44px;padding:0;background:none;transform:perspective(600px) rotateX(var(--camera-x,0deg)) rotateY(var(--camera-y,0deg));transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.camera-button:active{transform:perspective(600px) scale(.97)}
+.camera-button img{transition:filter .3s,transform .3s}
+.camera-button:hover img,.camera-button:focus-visible img{filter:drop-shadow(0 4px 5px #8f0d1724)}
+.camera-lens{position:absolute;left:61%;top:59%;width:25%;aspect-ratio:1;border:1px solid #b71b29;border-radius:50%;transform:translate(-50%,-50%) scale(.82);opacity:0;pointer-events:none;transition:opacity .3s,transform .5s cubic-bezier(.2,.8,.2,1)}
+.camera-button:hover .camera-lens,.camera-button:focus-visible .camera-lens{opacity:.65;transform:translate(-50%,-50%) scale(1)}
+.camera-hint{position:absolute;left:50%;bottom:100%;transform:translate(-50%,5px);font:400 .75rem/1.3 Inter,sans-serif;letter-spacing:0;color:var(--muted);white-space:nowrap;opacity:0;transition:opacity .2s,transform .2s;pointer-events:none}
+.camera-button:hover .camera-hint,.camera-button:focus-visible .camera-hint{opacity:1;transform:translate(-50%,0)}
+.camera-button.is-snapping img{animation:camera-shutter .28s ease-out}
+@keyframes camera-shutter{0%,100%{transform:scale(1)}40%{transform:scale(.96) rotate(-1deg)}70%{transform:scale(1.025)}}
+.site-header nav a{position:relative;transition:color .2s}
+.site-header nav a::after{content:"";position:absolute;bottom:.35rem;left:0;width:100%;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .25s cubic-bezier(.2,.8,.2,1)}
+.site-header nav a:hover::after,.site-header nav a:focus-visible::after{transform:scaleX(1)}
+.text-link>span,.image-label>span,.cover-bottom a>span{display:inline-block;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.text-link:hover>span,.text-link:focus-visible>span,.project-image:hover .image-label>span{transform:translate(3px,-3px)}
+.cover-bottom a:hover>span,.cover-bottom a:focus-visible>span{transform:translateY(4px)}
+.play-circle{transition:transform .3s,background .3s,color .3s}
+.film-card:hover .play-circle,.film-card:focus-visible .play-circle{transform:translate(-50%,-50%) scale(1.08);background:#bc2a36;color:#f8f8f8}
+.project-image:focus-visible .image-label>span{transform:translate(3px,-3px)}
+.media-dialog[open]{animation:viewer-arrive .25s ease-out both}
+@keyframes viewer-arrive{from{opacity:0;transform:translateY(8px) scale(.99)}to{opacity:1;transform:none}}
+@media(hover:none){.camera-hint{opacity:1;transform:translate(-50%,0);font-size:.6875rem}}
+@media(prefers-reduced-motion:reduce){
+  html.lenis{scroll-behavior:auto!important}
+  .camera-button,.camera-button:active{transform:none}
+  .camera-lens{display:none}
+  .text-link:hover>span,.text-link:focus-visible>span,.project-image:hover .image-label>span,.project-image:focus-visible .image-label>span,.cover-bottom a:hover>span,.cover-bottom a:focus-visible>span{transform:none}
+  .film-card:hover .play-circle,.film-card:focus-visible .play-circle{transform:translate(-50%,-50%)}
+}

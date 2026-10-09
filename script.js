@@ -11,10 +11,10 @@ const category = document.querySelector('#media-category');
 const body = document.querySelector('#media-body');
 const description = document.querySelector('#media-description');
 const original = document.querySelector('#media-original');
-let previousFocus, currentVideo;
+let previousFocus, currentVideo, smoothScroller;
 const formatDuration = s => Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0');
-const openViewer = () => { previousFocus = document.activeElement; if (typeof dialog.showModal !== 'function') return false; dialog.showModal(); document.body.classList.add('viewer-open'); return true; };
-const clearViewer = () => { currentVideo?.pause(); currentVideo?.removeAttribute('src'); currentVideo?.load(); currentVideo = null; body.replaceChildren(); document.body.classList.remove('viewer-open'); previousFocus?.focus({ preventScroll: true }); };
+const openViewer = () => { previousFocus = document.activeElement; if (typeof dialog.showModal !== 'function') return false; dialog.showModal(); smoothScroller?.stop(); document.body.classList.add('viewer-open'); return true; };
+const clearViewer = () => { currentVideo?.pause(); currentVideo?.removeAttribute('src'); currentVideo?.load(); currentVideo = null; body.replaceChildren(); document.body.classList.remove('viewer-open'); smoothScroller?.start(); previousFocus?.focus({ preventScroll: true }); };
 document.querySelector('.dialog-close').addEventListener('click', () => dialog.close());
 dialog.addEventListener('close', clearViewer);
 dialog.addEventListener('click', event => { if (event.target !== dialog) return; const box = dialog.getBoundingClientRect(); if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dialog.close(); });
@@ -46,14 +46,18 @@ async function openVideo(id) {
     body.replaceChildren(); openViewer();
   }
 }
+function openPhoto(photo) {
+  title.textContent = photo.dataset.caption; category.textContent = 'Photography'; description.textContent = 'Photograph by Aikagra Gupta'; original.href = photo.dataset.original || photo.dataset.photo; original.firstChild.textContent = photo.dataset.original ? 'View on VSCO ' : 'Open original ';
+    const img = document.createElement('img'); img.src = photo.dataset.photo; img.alt = photo.querySelector('img').alt; body.replaceChildren(img);
+    if (!openViewer()) window.open(img.src, '_blank', 'noopener');
+}
+
 document.addEventListener('click', event => {
   const film = event.target.closest('[data-video]');
   if (film) openVideo(film.dataset.video);
   const photo = event.target.closest('[data-photo]');
   if (photo) {
-    title.textContent = photo.dataset.caption; category.textContent = 'Photography'; description.textContent = 'Photograph by Aikagra Gupta'; original.href = photo.dataset.original || photo.dataset.photo; original.firstChild.textContent = photo.dataset.original ? 'View on VSCO ' : 'Open original ';
-    const img = document.createElement('img'); img.src = photo.dataset.photo; img.alt = photo.querySelector('img').alt; body.replaceChildren(img);
-    if (!openViewer()) window.open(img.src, '_blank', 'noopener');
+    openPhoto(photo);
   }
 });
 mediaPromise.then(films => {
@@ -81,12 +85,54 @@ mediaPromise.then(films => {
 if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   const scenes = document.querySelectorAll('.about-copy, .identity-portrait, .experience, .section-heading, .project, .film-card, #photo-grid .photo');
   const sceneObserver = new IntersectionObserver(entries => {
+    let revealed = 0;
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
       entry.target.classList.remove('reveal-pending');
+      entry.target.style.animationDelay = Math.min(revealed++, 3) * 65 + 'ms';
       entry.target.classList.add('reveal-in');
       sceneObserver.unobserve(entry.target);
     });
   }, { threshold: 0.05 });
   scenes.forEach(scene => { scene.classList.add('reveal-pending'); sceneObserver.observe(scene); });
 }
+
+// Wheel input eases gently; touch and keyboard keep their native behavior.
+if (typeof Lenis === 'function') {
+  smoothScroller = new Lenis({
+    autoRaf: true,
+    lerp: 0.11,
+    smoothWheel: true,
+    syncTouch: false,
+    respectReducedMotion: true,
+    anchors: { duration: 1.1 },
+    stopInertiaOnNavigate: true,
+  });
+}
+
+const cameraButton = document.querySelector('.camera-button');
+const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+const cameraPhotos = [...document.querySelectorAll('#photo-grid [data-photo]')];
+let nextCameraPhoto = 1;
+const resetCamera = () => {
+  cameraButton?.style.removeProperty('--camera-x');
+  cameraButton?.style.removeProperty('--camera-y');
+};
+cameraButton?.addEventListener('pointermove', event => {
+  if (motionPreference.matches || !finePointer.matches) return;
+  const rect = cameraButton.getBoundingClientRect();
+  const x = Math.max(-.5, Math.min(.5, (event.clientX - rect.left) / rect.width - .5));
+  const y = Math.max(-.5, Math.min(.5, (event.clientY - rect.top) / rect.height - .5));
+  cameraButton.style.setProperty('--camera-x', -y * 8 + 'deg');
+  cameraButton.style.setProperty('--camera-y', x * 10 + 'deg');
+});
+cameraButton?.addEventListener('pointerleave', resetCamera);
+cameraButton?.addEventListener('blur', resetCamera);
+motionPreference.addEventListener('change', resetCamera);
+cameraButton?.addEventListener('animationend', () => cameraButton.classList.remove('is-snapping'));
+cameraButton?.addEventListener('click', () => {
+  if (!cameraPhotos.length) return;
+  if (!motionPreference.matches) cameraButton.classList.add('is-snapping');
+  openPhoto(cameraPhotos[nextCameraPhoto++ % cameraPhotos.length]);
+});
