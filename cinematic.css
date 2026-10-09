@@ -1,5 +1,5 @@
 /* Archival film: pure black, red ink, visible grain, quiet copy. */
-:root{--film-red:#8f0d17;--film-light:#bc2a36;--film-black:#000000;--display:"Libre Bodoni",Georgia,"Times New Roman",serif;--grain:url("assets/film-grain.svg")}
+:root{--film-red:#8f0d17;--film-light:#bc2a36;--film-black:#000000;--display:"Bodoni Moda",Didot,"Times New Roman",serif;--grain:url("assets/film-grain.svg")}
 body::before{content:none}
 body::after{content:none}
 @keyframes film-grain{0%,100%{transform:translate(0,0)}20%{transform:translate(-1.2%,.8%)}40%{transform:translate(1%,-.9%)}60%{transform:translate(-.6%,-1.2%)}80%{transform:translate(.9%,.6%)}}
@@ -11,7 +11,7 @@ body::after{content:none}
 .about-panel{padding:6.5rem 0}
 .about-grid{grid-template-columns:1.12fr 1fr;gap:clamp(3rem,7vw,7rem);align-items:start}
 .about-copy>.eyebrow{color:#c2c2c2;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:2rem}
-.about-copy h2{font-family:var(--display);font-size:clamp(4.4rem,7.5vw,7rem);font-weight:500;line-height:.99;letter-spacing:-.045em;margin-bottom:2.5rem}
+.about-copy h2{font-family:var(--display);font-size:clamp(4.4rem,7.5vw,7rem);font-weight:400;line-height:.99;letter-spacing:-.045em;margin-bottom:2.5rem}
 .about-copy h2 span{font:inherit;letter-spacing:inherit;font-style:italic;color:var(--film-light);display:block;margin-top:0;text-shadow:0 0 24px #dd333328}
 .about-copy>p.about-name{font-size:1.05rem;font-weight:500;color:#f8f8f8;margin-bottom:1rem}
 .about-copy>p:not(.eyebrow){font-size:1rem;line-height:1.7;max-width:26rem;margin-bottom:.5rem}
@@ -28,7 +28,7 @@ body::after{content:none}
 .experience-row h4{font-weight:500;font-size:1rem}
 .experience-row>p:not(.meta){font-size:.875rem;color:#c2c2c2}
 .experience-row .meta{font-size:.75rem;color:#aaa}
-.section-heading h2{font-family:var(--display);font-weight:500;font-size:clamp(3.4rem,6.4vw,5.5rem);letter-spacing:-.045em;line-height:1.06}
+.section-heading h2{font-family:var(--display);font-weight:400;font-size:clamp(3.4rem,6.4vw,5.5rem);letter-spacing:-.045em;line-height:1.06}
 .section-heading{margin-bottom:2.8rem}
 .project>p{font-size:.9375rem}
 .project-heading{margin-bottom:.4rem}
@@ -45,7 +45,7 @@ body::after{content:none}
 .photo{position:relative;box-shadow:none}
 .photo::after{content:none}
 .photo:hover img{transform:scale(1.015)}
-.contact-section h2{font-family:var(--display);font-weight:500;letter-spacing:-.045em;line-height:1.06;font-size:clamp(4rem,8vw,7rem);margin-bottom:2.8rem}
+.contact-section h2{font-family:var(--display);font-weight:400;letter-spacing:-.045em;line-height:1.06;font-size:clamp(4rem,8vw,7rem);margin-bottom:2.8rem}
 .recognition-grid strong{font-family:Inter,sans-serif;font-weight:500;font-size:1.6rem;line-height:1.1;letter-spacing:-.03em}
 .reveal-pending{opacity:0;transform:translateY(12px)}
 .reveal-in{animation:scene-in .6s cubic-bezier(.2,.7,.2,1) both}
@@ -71,7 +71,7 @@ html{scroll-padding-top:0}
 .cover-year{font-size:.875rem;text-transform:uppercase;letter-spacing:.24em;padding-left:.24em;margin-top:.45rem}
 .cover-camera{margin:10rem 0 0;justify-self:end;width:clamp(120px,14vw,200px);text-align:center;color:var(--red)}
 .cover-camera img{width:100%;height:auto;margin:auto}
-.cover-camera figcaption{font:500 .875rem/1.4 var(--display);font-style:italic;letter-spacing:0;margin-top:.35rem;white-space:nowrap}
+.cover-camera figcaption{font:400 .875rem/1.4 var(--display);font-style:italic;letter-spacing:0;margin-top:.35rem;white-space:nowrap}
 /* A narrow feather at section boundaries; the section interiors stay pure black. */
 .about-panel::before,.film-section::before,.contact-section::before,
 .about-panel::after,.film-section::after{content:"";position:absolute;left:0;right:0;height:12px;pointer-events:none;z-index:3}

@@ -145,3 +145,8 @@ Researched cinematic attention, shot scale and a filmmaker website case study; s
 ## Serif legibility refinement
 
 User liked the serif character but the Bodoni Moda display hairlines nearly disappeared, especially the left stroke of A on black. Replaced the display family with Libre Bodoni at medium 500, preserving the italic surname and existing sizing, palette and compositions. Display section headings, featured project titles, film titles, honors, viewer titles and camera caption share the stronger family; Inter and Devanagari remain. Google Fonts documents Libre Bodoni as a Bodoni revival adapted for web requirements: https://github.com/google/fonts/blob/main/ofl/librebodoni/DESCRIPTION.en_us.html. Applied typography.md > Using custom fonts (Make sure custom fonts are legible), with accessibility.md > Vision and dark-mode.md > Best practices as web principles. Visually reviewed the rendered name against black. No automated tests run.
+
+
+## Restore the previous display font
+
+At the user’s request, restored Bodoni Moda and all original display font weights from ff033fd. Cinematic layout and sizing remain as previously approved.
