@@ -115,3 +115,8 @@ The accepted 1481 by 1062 leaning portrait file is unchanged. All focus treatmen
 Removed both global grain/scratch overlays and film/gallery noise overlays. Texture is confined to the cover and About photographs. The Devanagari and page canvas stay clean. Added a generated transparent black-and-ivory engraved Sony A7 III with a thin red ring, using Sony's official front-side shape diagram as reference. Caption is real text: a7iii and a dream. Prompt saved in design/a7iii-ink-prompt.md.
 
 Added a 12px edge feather between pale and black sections. Black interiors remain #000000. Higher contrast/reduced transparency disable decorative texture, masks, and section feathers. Local visual inspection covered the cover and About section. No automated tests were run.
+
+
+## Minimal front camera and irregular print edges
+
+User requested a very minimal front view of the camera and uneven ink borders, while keeping the current grain. Replaced the generated engraved camera with a small native SVG: black body, front lens circles, one crimson ring and indicator, no shading or perspective. Applied icons.md > Best practices (highly simplified design, vector format) and images.md > Formats. The caption remains real text. Replaced the linear feather mask and rectangular border overlay with a separate SVG alpha mask: asymmetric irregular brush perimeter with localized fractal displacement and subpixel softening. Grain, photograph, face, pose, title and section transitions are unchanged.
