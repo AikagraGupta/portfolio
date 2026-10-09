@@ -1,0 +1,27 @@
+/* Nine ink birds carry pieces of the photograph into its final frame. */
+.flock-waiting{position:relative}
+.flock-waiting>img,.portrait.flock-waiting>.portrait-accent{opacity:0}
+.portrait.flock-waiting::before{opacity:0}
+.flock-layer{position:absolute;inset:0;z-index:2;overflow:hidden;pointer-events:none;isolation:isolate}
+.flock-fragment{position:absolute;left:var(--tile-left);top:var(--tile-top);width:33.35%;height:33.35%;background-image:var(--photo-source);background-size:300% 300%;background-position:var(--tile-position);opacity:0;will-change:transform,clip-path;clip-path:polygon(0% 32%,24% 25%,36% 38%,50% 55%,64% 38%,76% 25%,100% 32%,76% 50%,62% 60%,50% 82%,38% 60%,24% 50%)}
+.flock-fragment::after{content:"";position:absolute;inset:0;background:#161616;opacity:1}
+.flock-arriving .flock-fragment{animation:bird-to-frame var(--flight-time,1.45s) cubic-bezier(.22,.65,.2,1) var(--flight-delay) both}
+.flock-arriving .flock-fragment::after{animation:ink-to-image var(--flight-time,1.45s) ease var(--flight-delay) both}
+.flock-arriving>img,.portrait.flock-arriving>.portrait-accent{animation:finished-print .3s ease calc(var(--flight-time,1.45s) + .12s) both}
+.portrait.flock-arriving::before{opacity:.35;transition:opacity 1s .6s}
+@keyframes bird-to-frame{
+  0%{opacity:0;transform:translate(var(--flight-x),var(--flight-y)) rotate(var(--flight-turn)) scale(.18)}
+  12%{opacity:1}
+  38%{clip-path:polygon(0% 12%,24% 25%,36% 45%,50% 58%,64% 45%,76% 25%,100% 12%,76% 50%,62% 62%,50% 82%,38% 62%,24% 50%)}
+  62%{opacity:1;transform:translate(0,-8%) rotate(-2deg) scale(.45);clip-path:polygon(0% 42%,24% 32%,36% 40%,50% 55%,64% 40%,76% 32%,100% 42%,76% 54%,62% 65%,50% 82%,38% 65%,24% 54%)}
+  100%{opacity:1;transform:none;clip-path:polygon(0% 0%,33% 0%,66% 0%,100% 0%,100% 33%,100% 66%,100% 100%,66% 100%,33% 100%,0% 100%,0% 66%,0% 33%)}
+}
+@keyframes ink-to-image{0%,48%{opacity:1}100%{opacity:0}}
+@keyframes finished-print{from{opacity:0}to{opacity:1}}
+/* A small flock remains visible if the network is still bringing the photo in. */
+.flock-waiting:not(.flock-arriving) .flock-fragment{opacity:.65;transform:translate(var(--flight-x),var(--flight-y)) rotate(var(--flight-turn)) scale(.18)}
+@media(prefers-reduced-motion:reduce),(prefers-contrast:more){
+  .flock-layer{display:none}
+  .flock-waiting>img,.portrait.flock-waiting>.portrait-accent{opacity:1}
+  .portrait.flock-waiting::before{opacity:.35}
+}

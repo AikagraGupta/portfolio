@@ -164,3 +164,12 @@ Applied motion.md > Best practices / Providing feedback, buttons.md > Best pract
 ## Selected Bodoni Moda adjusted
 
 User chose the first font specimen: Bodoni Moda with optical size 24. Disabled automatic optical sizing and fixed the opsz axis to 24 for the display headings, project and film titles, honors, viewer title and camera caption. Regular weight 400 and italic surname match the chosen specimen; the existing WHO AM I semibold weight remains. Sizing, layouts, Inter, Devanagari and the smooth-scroll/camera interactions are unchanged. This uses the typeface’s optical-size design rather than artificial outlines or shadows.
+
+
+## Birds becoming photographs
+
+Added a local nine-fragment loading entrance to the cover portrait and photography gallery. Each fragment starts as a black bird silhouette, flies along a deterministic short path, and unfolds into its matching part of the source image. The real photograph takes over after assembly, preserving the accepted ink mask, selective red detail, grain, face and composition. Cover flight lasts 1.45 seconds plus small stagger and final handoff; gallery flight is .85 seconds.
+
+Entrances wait for the image to load/decode and become visible. Background fragments reuse loaded image URLs, preserving native lazy loading. Navigation stays available, the layout keeps its dimensions, offscreen photos wait until scrolled into view, and errors/timeouts always reveal the underlying image. Decorative fragments are hidden from assistive technology and loading hosts expose aria-busy. Reduced motion skips the effect, including preference changes during loading; higher contrast also shows photographs directly. No JavaScript means normal photographs.
+
+Applied loading.md > Best practices (show content promptly and allow other actions), motion.md > Best practices / Providing feedback, and images.md > Formats from the Apple design skill. Visually inspected an intermediate bird frame and completed portrait on a compact screen. No automated tests were run.
