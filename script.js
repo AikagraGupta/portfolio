@@ -28,6 +28,7 @@ async function openVideo(id) {
     category.textContent = film.category + ' · ' + formatDuration(film.duration);
     description.textContent = 'Video by Aikagra Gupta';
     original.href = film.original;
+    original.firstChild.textContent = 'Open original ';
     body.replaceChildren();
     const video = document.createElement('video');
     video.src = film.src; video.poster = film.poster; video.controls = true; video.playsInline = true; video.preload = 'metadata';
@@ -50,14 +51,22 @@ document.addEventListener('click', event => {
   if (film) openVideo(film.dataset.video);
   const photo = event.target.closest('[data-photo]');
   if (photo) {
-    title.textContent = photo.dataset.caption; category.textContent = 'Photography'; description.textContent = 'Photograph by Aikagra Gupta'; original.href = photo.dataset.photo;
+    title.textContent = photo.dataset.caption; category.textContent = 'Photography'; description.textContent = 'Photograph by Aikagra Gupta'; original.href = photo.dataset.original || photo.dataset.photo; original.firstChild.textContent = photo.dataset.original ? 'View on VSCO ' : 'Open original ';
     const img = document.createElement('img'); img.src = photo.dataset.photo; img.alt = photo.querySelector('img').alt; body.replaceChildren(img);
     if (!openViewer()) window.open(img.src, '_blank', 'noopener');
   }
 });
 mediaPromise.then(films => {
   const grid = document.querySelector('#film-archive-grid'); grid.replaceChildren();
-  films.forEach(film => {
+  const featuredIds = new Set([...document.querySelectorAll('.film-grid [data-video]')].map(button => button.dataset.video));
+  const seenIds = new Set(), seenSources = new Set();
+  const archiveFilms = films.filter(film => {
+    if (seenIds.has(film.id) || seenSources.has(film.src)) return false;
+    seenIds.add(film.id); seenSources.add(film.src);
+    return !featuredIds.has(film.id);
+  });
+  document.querySelector('[data-archive-count]').textContent = archiveFilms.length + ' videos';
+  archiveFilms.forEach(film => {
     const button = document.createElement('button'); button.type = 'button'; button.className = 'film-card'; button.dataset.video = film.id; button.setAttribute('aria-label', 'Watch ' + film.title + ', ' + formatDuration(film.duration));
     const thumb = document.createElement('div'); thumb.className = 'film-thumbnail';
     const img = document.createElement('img'); img.src = film.poster; img.alt = 'A frame from ' + film.title; img.loading = 'lazy'; img.width = film.width; img.height = film.height;
@@ -67,13 +76,17 @@ mediaPromise.then(films => {
     const meta = document.createElement('span'); meta.textContent = film.category + ' · ' + formatDuration(film.duration); caption.append(name, meta); button.append(thumb, caption); grid.append(button);
   });
 }).catch(() => { const link = document.createElement('a'); link.href = 'https://drive.google.com/drive/folders/1Dq7Fz7RGveXl16O7vFfZGQ5mPBtPK1gh'; link.textContent = 'Open the complete video archive on Google Drive'; link.target = '_blank'; link.rel = 'noopener'; document.querySelector('#film-archive-grid').replaceChildren(link); });
-const featuredPhotos = new Set([...document.querySelectorAll('[data-photo]')].map(b => b.dataset.photo));
-const extraPhotos = document.querySelector('#photo-extra');
-for (const place of ['shanghai', 'malaysia']) {
-  for (let i = 1; i <= 8; i++) {
-    const number = String(i).padStart(2, '0'); const path = 'assets/gallery/' + place + '-' + number + '.jpg'; if (featuredPhotos.has(path)) continue;
-    const label = (place === 'shanghai' ? 'Shanghai' : 'Malaysia') + ' · Frame ' + number;
-    const b = document.createElement('button'); b.type = 'button'; b.className = 'photo'; b.dataset.photo = path; b.dataset.caption = label; b.setAttribute('aria-label', 'View ' + label);
-    const img = document.createElement('img'); img.src = path; img.alt = 'Aikagra’s photograph, ' + label; img.loading = 'lazy'; b.append(img); extraPhotos.append(b);
-  }
+
+// Scene entrances preserve native scrolling and stay optional.
+if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const scenes = document.querySelectorAll('.about-copy, .identity-portrait, .experience, .section-heading, .project, .film-grid, #photo-grid');
+  const sceneObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.remove('reveal-pending');
+      entry.target.classList.add('reveal-in');
+      sceneObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.05 });
+  scenes.forEach(scene => { scene.classList.add('reveal-pending'); sceneObserver.observe(scene); });
 }

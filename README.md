@@ -20,16 +20,19 @@ The Vercel project is `portfolio`, under `aikagras-projects`. From this folder:
 vercel --prod --yes
 ```
 
-Keep the complete assets directory in each deployment. Ten optimized H.264/AAC films are hosted directly from `assets/films/`; Google Drive originals remain linked in the viewer. Videos load only when opened.
+Keep the complete assets directory in each deployment. Ten optimized H.264/AAC films are hosted directly from `assets/films/`; Google Drive originals remain linked in the viewer. Videos load only when opened. The film section features Dreamcatcher, Herald, and Digex 2024. Its expandable archive excludes featured IDs and duplicate sources, and displays the remaining seven videos.
 
 ## Content
 
 - `index.html`: biography, projects, experience, and contact details
-- `styles.css`: the white/deep-red design, responsive layouts, and accessibility preferences
+- `styles.css`: base responsive layouts and accessibility preferences
+- `cinematic.css`: film grain, halation, portrait duotone, poster typography, and scene entrances
 - `script.js`: navigation and native video/photography dialogs
 - `media.json`: ten films, titles, durations, aspect ratios, and original-file links
 - `assets/films/`: web video exports and real frame posters
-- `assets/gallery/`: sixteen Shanghai and Malaysia photographs
+- `assets/vsco/` and `photos.json`: fourteen VSCO photographs, six selected and eight additional; no location-specific labels
+- `assets/film-grain.svg`: lightweight procedural film texture
+- `assets/gallery/`: previous gallery assets, retained for the studio project preview
 - `assets/novo-website.jpg`: actual heynovo.ai website capture
 - `assets/aikagra-childhood-restored.png`: restored monochrome childhood portrait
 - `assets/Aikagra_Gupta_CV.pdf`: résumé

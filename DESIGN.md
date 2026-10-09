@@ -18,3 +18,62 @@ Canvas #f8f8f8, surface #ffffff, text #161616, secondary #595959, accent #b41418
 Noto Serif Devanagari for the name; Inter and system UI for content. Body 1.0625rem, metadata .875rem, project headings 1.625rem; section headings clamp(2.8rem, 5.6vw, 4.5rem).
 
 Regular: flanking labels / central photo and name / year; two-column introduction and projects. Compact: stacked cover, introduction, and projects; native menu button. Film and photo archives use progressive disclosure. One short entrance animation, disabled for reduced motion. Native dialogs provide focus containment, Escape, and explicit dismissal.
+
+
+## Film direction update — October 9, 2026
+
+### Summary
+
+Good. The site presents a builder who also observes and makes films. Its signature combines the user's archival childhood photograph and the name एकाग्र with a red, distressed "WHO AM I?" print. This is a responsive HTML portfolio: Apple's principles and foundations apply; native app menu bars and tab conventions do not.
+
+### Content corrections
+
+- Featured films: Dreamcatcher, Herald, Digex 2024.
+- The secondary archive excludes all featured IDs and repeated source URLs. Seven additional films remain. This follows `layout.md › Visual hierarchy`: "Use progressive disclosure to make layouts cleaner and easier to interact with." Removing repeated entries is a craft decision.
+- Six selected VSCO images lead to eight additional photographs. Their captions describe what is in the images without assuming locations. `writing.md › Best practices` emphasizes clear, consistent language.
+- The specific Build with Gemma callout was replaced with learning, hackathons, prototypes, and side projects, as requested.
+
+### Visual direction and research
+
+The user's supplied second-page reference is the main source: charcoal panel, red archival portrait crop, black oversized WHO AM I lettering, white Devanagari identity question, and readable white biography.
+
+Additional references:
+- [Ronin161's own making-of](https://tympanus.net/codrops/2024/02/20/case-study-ronin161s-portfolio-2024/): grain, vignette, bloom, and text integrated with the image treatment. Adapted here as light SVG grain, restrained halation, and distressed print, without adding a heavy rendering engine.
+- [Naked City Films, by SavoirFaire](https://tympanus.net/codrops/2026/01/19/naked-city-films-designing-and-building-a-website-that-refuses-to-stand-still/): typography, scale, editorial cuts, and continuity between scenes. Adapted as condensed display typography, one-time entrances, and light/dark pacing.
+- [Marwan Mursyid, by QZentrix](https://qzentrix.com/case-studies/marwanmursyid-portfolio), [live portfolio](https://www.marwanmursyid.com/): film-grain and editorial photography direction. Inspected the live presentation.
+These adaptations are design judgments rather than HIG requirements.
+
+### Tokens and narrative
+
+Retain #f8f8f8 paper, #b41418 ink, and #101010 dark film panels. Dark display accent #ef6b6e, body #f8f8f8, secondary #c2c2c2. Base contrast figures: red/paper 6.47:1, secondary/paper 6.60:1, light red/#141414 6.14:1, secondary/#141414 10.34:1. Grain and gradients vary rendered pixels slightly; these are base-token measurements.
+
+Barlow Condensed is reserved for cinematic headings, Inter for reading and controls, and Noto Serif Devanagari for Hindi. `typography.md › Conveying hierarchy` recommends minimizing typefaces and distinguishing important information. Each face has one role. Body remains 16–17 px, metadata 14 px.
+
+The story moves from childhood curiosity to building useful products, then to motion and observation: "A builder's mind. A filmmaker's eye." It uses existing project and biography facts rather than inventing personal history.
+
+Regular:
+```text
+archival portrait + एकाग्र
+-------------------------
+builder's mind | red WHO AM I print
+biography      | experience
+-------------------------
+products / dark film / VSCO stills / contact
+```
+
+Compact:
+```text
+archival portrait + एकाग्र
+biography and story
+red WHO AM I print
+experience
+products / film / stills / contact
+```
+
+### Interaction and scope
+
+Keep native buttons, details, dialog, and video controls. `playing-video.md › Best practices` says "Always display video content at its original aspect ratio." The original ratios remain in the player. `modality.md › Best practices` requires an obvious dismissal: Close and Escape remain available, and focus returns to the opening control.
+
+`motion.md › Best practices`: "Make motion optional." Grain uses small stepped position changes, never brightness flashes or moving text. Scene entrances respect reduced motion; higher contrast and reduced transparency remove the grain. `branding.md › Best practices`: "Ensure branding always defers to content." Project descriptions and controls keep straightforward language.
+
+Visual review covered regular and compact layouts. There is no claim of a complete assistive-technology audit or caption coverage for every film.
