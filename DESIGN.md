@@ -130,3 +130,8 @@ Replaced the flat camera glyph with original generated front-facing camera art: 
 ## Black camera variant
 
 User requested black. Recolored the vintage front camera with imagegen: solid black body and lens, fine ivory engraved outlines, and the retained small crimson reflection. Source and previous variants are preserved. Portrait, grain, ink-wash mask and layout remain unchanged. Asset: assets/a7iii-vintage-black.png.
+
+
+## Center cover composition and remove descriptor
+
+Centered the portrait, Devanagari title and Since 2007 as one group horizontally and vertically in the viewport. Header-aware cover padding balances the space above and below the group. Left name and right camera align with the group; the Selected work link is independently pinned near the lower right. Removed the Websites / Films / Photography bottom-left descriptor from the HTML. Image, grain and ink treatment are unchanged. Applied layout.md > Visual hierarchy (group related items and align elements) and Adaptability.
