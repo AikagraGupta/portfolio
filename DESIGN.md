@@ -159,3 +159,8 @@ Added locally vendored Lenis 1.3.26 (MIT), following https://github.com/darkroom
 Converted the existing camera art to a labeled native button. Fine-pointer motion tilts it by at most 4/5 degrees with a small red lens highlight and discoverable hover/focus hint. Activating it opens the next featured photograph, starting with Dragon. Keyboard and touch activation share the same action, and focus returns to the camera on close. Added brief link-arrow gestures, nav underline reveals, film play-button feedback, a short viewer entrance and up to 195ms of scene reveal staggering. Reduced motion removes decorative movement. The accepted camera art, portrait, fonts, grain and layouts remain.
 
 Applied motion.md > Best practices / Providing feedback, buttons.md > Best practices / Content, pointing-devices.md > Pointer shape and content effects, and feedback.md > Best practices from the Apple design skill as web principles. Visually reviewed camera-to-photo opening, dialog close/focus return and smooth section navigation. No automated tests were added or run.
+
+
+## Selected Bodoni Moda adjusted
+
+User chose the first font specimen: Bodoni Moda with optical size 24. Disabled automatic optical sizing and fixed the opsz axis to 24 for the display headings, project and film titles, honors, viewer title and camera caption. Regular weight 400 and italic surname match the chosen specimen; the existing WHO AM I semibold weight remains. Sizing, layouts, Inter, Devanagari and the smooth-scroll/camera interactions are unchanged. This uses the typeface’s optical-size design rather than artificial outlines or shadows.

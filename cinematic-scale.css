@@ -154,3 +154,11 @@ footer{margin-top:clamp(5rem,11vw,10rem);padding:2rem 0}
 @media(prefers-contrast:more),(prefers-reduced-transparency:reduce){
   .media-dialog::backdrop{background:#000}
 }
+
+/* Selected specimen: Bodoni Moda adjusted, fixed optical size 24. */
+.about-copy h2,.about-copy h2 span,.section-heading h2,.identity-english,
+.project-heading h3,.film-caption strong,.recognition-grid strong,
+.contact-section h2,.dialog-header h2,.cover-camera figcaption{
+  font-optical-sizing:none;
+  font-variation-settings:"opsz" 24;
+}
