@@ -93,3 +93,8 @@ Loaded the complete public VSCO gallery of 28 photographs through the visible Lo
 The user accepted the layout and requested a return to the earlier subtle grain, darker reds, and a Since 2007 cover. Restored the global noise opacity to .075 and the SVG contrast curve to its earlier value. Pure black #000000 remains the foundation; no background gradients lift it. The red on paper is #8f0d17, while large display text on black uses #bc2a36. The monochrome hero is a built-in image_gen artistic pose/background reconstruction: seated upright against black ink washes. The original and earlier restored photograph remain intact. The portrait prompt is saved in design/ink-portrait-prompt.md.
 
 Applied color.md > Inclusive color and image-views.md > Content to preserve readable image overlays. The face crop now centers on the upright portrait, with lighter added texture.
+
+
+## Restore the leaning portrait
+
+User rejected the reconstructed seated pose. The cover and About now use the previous restored leaning photograph again. The underlying asset is unchanged, with original 1481 by 1062 dimensions and full aspect ratio. Added only a separate generated transparent ink-edge overlay at 30% opacity on the cover. The central image is not regenerated. Restored the About face crop for the leaning pose. Since 2007, the accepted minimal layout, deeper reds, pure black, and reduced grain remain in place. Prompt saved in design/ink-edge-prompt.md.
