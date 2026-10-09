@@ -125,3 +125,8 @@ User requested a very minimal front view of the camera and uneven ink borders, w
 ## Vintage manual drawing and fluid ink dissolve
 
 Replaced the flat camera glyph with original generated front-facing camera art: airy ivory and charcoal linework, sparse stipple and a red glass reflection. Researched vintage camera ink/print examples (sources in design/vintage-camera-and-ink-wash.md) before generating. Replaced the dry jagged brush cutout with an opaque grayscale ink wash luminance mask. Its solid white center keeps the accepted portrait and face unchanged, while peripheral gray pools, blooms and detached droplets make the photo dissolve into the pale canvas. Existing grain and vignette settings remain unchanged. HIG images.md > Resolution and Formats; image-views.md > Content guide responsive asset sizing and title legibility. Organic ink shape and camera print treatment are art-direction choices.
+
+
+## Black camera variant
+
+User requested black. Recolored the vintage front camera with imagegen: solid black body and lens, fine ivory engraved outlines, and the retained small crimson reflection. Source and previous variants are preserved. Portrait, grain, ink-wash mask and layout remain unchanged. Asset: assets/a7iii-vintage-black.png.
